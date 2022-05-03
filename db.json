@@ -1,0 +1,434 @@
+{
+    "suggestions": [
+        {
+            "id": 980,
+            "name": "Dublin",
+            "region": "Irlanda",
+            "type": "M"
+        },
+        {
+            "id": 14277,
+            "name": "Dublin",
+            "region": "Irlanda e arredores",
+            "type": "M"
+        },
+        {
+            "id": 10966726,
+            "name": "Dublin Experience",
+            "region": "Dublin, Ireland",
+            "type": "M"
+        },
+        {
+            "id": 10966519,
+            "name": "Dublin Mountains",
+            "region": "Dublin, County South Dublin, Ireland",
+            "type": "M"
+        },
+        {
+            "id": 10968280,
+            "name": "Dublin Southside",
+            "region": "Irlanda",
+            "type": "M"
+        },
+        {
+            "id": 10966855,
+            "name": "Dublin Civic Museum",
+            "region": "Dublin, Ireland",
+            "type": "M"
+        },
+        {
+            "id": 11291124,
+            "name": "Dublin Heritage Park & Museums",
+            "region": "Dublin, California, United States of America",
+            "type": "M"
+        },
+        {
+            "id": 11212654,
+            "name": "Dublin Methodist Hospital - Anticoagulation Clinic",
+            "region": "Dublin, Ohio, United States of America",
+            "type": "M"
+        },
+        {
+            "id": 11264859,
+            "name": "Dublin Mall",
+            "region": "Dublin, Geórgia, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 126831,
+            "name": "Dublin Ranch Golf Course (campo de golfe)",
+            "region": "Dublin, Califórnia, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 10967005,
+            "name": "Dublin City Gallery – The Hugh Lane",
+            "region": "Dublin, Ireland",
+            "type": "M"
+        },
+        {
+            "id": 71549,
+            "name": "Dublin City University",
+            "region": "Dublin, Irlanda",
+            "type": "M"
+        },
+        {
+            "id": 10966921,
+            "name": "Dublin Bay",
+            "region": "Ireland",
+            "type": "M"
+        },
+        {
+            "id": 56625,
+            "name": "Dublinia",
+            "region": "Dublin, Irlanda",
+            "type": "M"
+        },
+        {
+            "id": 11282908,
+            "name": "Dublin Memorial Park",
+            "region": "Madison, Alabama, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 11289459,
+            "name": "Dublin Rodeo Heritage Museum",
+            "region": "Dublin, Texas, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 11090909,
+            "name": "Dublin Island",
+            "region": "Serra Leoa",
+            "type": "M"
+        },
+        {
+            "id": 6367,
+            "name": "Dublin",
+            "region": "Geórgia, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 126812,
+            "name": "Dublin Civic Center",
+            "region": "Dublin, Califórnia, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 6436,
+            "name": "Dublin",
+            "region": "Ohio, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 105671,
+            "name": "Dublin Laurens Museum",
+            "region": "Dublin, Geórgia, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 20258,
+            "name": "Dublin Zoo",
+            "region": "Dublin, Irlanda",
+            "type": "M"
+        },
+        {
+            "id": 6322,
+            "name": "Dublin",
+            "region": "Califórnia, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 11290528,
+            "name": "Dublin Gulch",
+            "region": "Shoshone, Califórnia, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 8166,
+            "name": "Dublin",
+            "region": "Virgínia, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 11289443,
+            "name": "Dublin Historical Museum",
+            "region": "Dublin, Texas, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 12468,
+            "name": "Dublin",
+            "region": "New Hampshire, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 11294105,
+            "name": "Dublin",
+            "region": "Pensilvânia, Estados Unidos",
+            "type": "M"
+        },
+        {
+            "id": 10968366,
+            "name": "Dublin Northside",
+            "region": "Irlanda",
+            "type": "M"
+        },
+        {
+            "id": 10966944,
+            "name": "Dublin Falconry",
+            "region": "Balrothery, County Fingal, Ireland",
+            "type": "M"
+        }
+    ],
+    "hotels": [
+        {
+            "id": 76628740,
+            "hotel": {
+                "name": "Uma Shanti Villa",
+                "address": "Jln raya pejeng kawan, Ubud, Bali, 80552",
+                "stars": 4.0,
+                "image": "https://images.trvl-media.com/hotels/77000000/76630000/76628800/76628740/e28ae4ed.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+                "description": "Hotel 4 estrelasUma Shanti Villa oferece tudo de que você precisa. Com o Wi-Fi grátis nos quartos, você fica sempre on-line.<br/> Você pode aproveitar estes benefícios:<br/> Uma piscina externa<br/> Estacionamento sem manobrista grátis<br/> Café da manhã com pratos da culinária local (sobretaxa) e recepção 24 horas<br/> Características do quarto<br/> Todos os quartos em Uma Shanti Villa incluem comodidades como Wi-Fi grátis."
+            },
+            "lowestPrice": {
+                "currency": "BRL",
+                "amount": 146.00
+            },
+            "rooms": [
+                {
+                    "roomType": {
+                        "name": "Quarto casal luxo"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 146.00
+                    },
+                    "cancellationPolicies": {
+                        "refundable": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": 32458754,
+            "hotel": {
+                "name": "Canggu Village",
+                "address": "Jalan Pantai Batu Bolong No. 78, Canggu, Bali, 80361",
+                "stars": 3.0,
+                "image": "https://images.trvl-media.com/hotels/33000000/32460000/32458800/32458754/5359e5be.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+                "description": "Bed and breakfast 3 estrelas no centro de Kuta Utara<br/>Aproveite as seguintes comodidades em Canggu Village: café da manhã feito na hora grátis, bar ao lado da piscina, and academia. Saboreie pratos deliciosos em Eat Me, restaurante que fica na propriedade. Os hóspedes podem ficar on-line com o Wi-Fi grátis nas áreas comuns."
+            },
+            "lowestPrice": {
+                "currency": "BRL",
+                "amount": 233.00
+            },
+            "rooms": [
+                {
+                    "roomType": {
+                        "name": "Quarto duplo standard"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 233.01
+                    },
+                    "cancellationPolicies": {
+                        "refundable": true
+                    }
+                },
+                {
+                    "roomType": {
+                        "name": "Quarto casal standard"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 223.33
+                    },
+                    "cancellationPolicies": {
+                        "refundable": true
+                    }
+                },
+                {
+                    "roomType": {
+                        "name": "Quarto casal superior, Acesso à piscina"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 274.58
+                    },
+                    "cancellationPolicies": {
+                        "refundable": false
+                    }
+                },
+                {
+                    "roomType": {
+                        "name": "Quarto duplo superior, Acesso à piscina"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 332.12
+                    },
+                    "cancellationPolicies": {
+                        "refundable": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": 45405636,
+            "hotel": {
+                "name": "D Sarian Seminyak",
+                "address": "Jalan Plawa Gang Cempaka No.07, Seminyak, Badung, Seminyak, Bali, 80361",
+                "stars": 3.0,
+                "image": "https://images.trvl-media.com/hotels/46000000/45410000/45405700/45405636/67ee5298.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+                "description": "D Sarian Seminyak fica em Sunset Road, um bairro de Seminyak. Quem gosta de fazer compras vai se deliciar em Praça de Seminyak. A região também oferece belas atrações naturais, como Praia de Double Six e Praia de Legian. Waterbom Bali e Finns Recreation Club também valem a visita."
+            },
+            "lowestPrice": {
+                "currency": "BRL",
+                "amount": 92.00
+            },
+            "rooms": [
+                {
+                    "roomType": {
+                        "name": "Quarto standard, 1 cama Queen"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 92.00
+                    },
+                    "cancellationPolicies": {
+                        "refundable": true
+                    }
+                },
+                {
+                    "roomType": {
+                        "name": "Quarto duplo standard"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 111.18
+                    },
+                    "cancellationPolicies": {
+                        "refundable": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": 32433762,
+            "hotel": {
+                "name": "Sunrise Villa Ubud",
+                "address": "88x Jl. Raya Sanggingan, Ubud, Bali, 80571",
+                "stars": 3.0,
+                "image": "https://images.trvl-media.com/hotels/33000000/32440000/32433800/32433762/2c76ec41.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+                "description": "Sunrise Villa Ubud fica em Ubud. A região conta com atrações culturais interessantes como Museu de Arte Neka e Museu Blanco, além de pontos de interesse populares como Oficina e estúdio de design John Hardy em Ubud e Kemenuh Orchid Garden. Jardim de orquídeas de Bali e Bali Safari e Parque Marinho também valem a visita. Os hóspedes gostam da localização deste Bed & Breakfast, a poucos passos dos pontos de interesse na região."
+            },
+            "lowestPrice": {
+                "currency": "BRL",
+                "amount": 140.00
+            },
+            "rooms": [
+                {
+                    "roomType": {
+                        "name": "stúdio superior"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 140.00
+                    },
+                    "cancellationPolicies": {
+                        "refundable": true
+                    }
+                },
+                {
+                    "roomType": {
+                        "name": "Quarto casal conforto"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 153.00
+                    },
+                    "cancellationPolicies": {
+                        "refundable": true
+                    }
+                },
+                {
+                    "roomType": {
+                        "name": "Quarto casal luxo"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 179.98
+                    },
+                    "cancellationPolicies": {
+                        "refundable": true
+                    }
+                },
+                {
+                    "roomType": {
+                        "name": "Quarto panorâmico, 2 quartos, Vista para o vale"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 204.98
+                    },
+                    "cancellationPolicies": {
+                        "refundable": true
+                    }
+                }
+            ]
+        },
+        {
+            "id": 893342,
+            "hotel": {
+                "name": "Bali Garden Beach Resort",
+                "address": "Jalan Kartika Plaza, Kuta, Bali, 80361",
+                "stars": 5.0,
+                "image": "https://images.trvl-media.com/hotels/1000000/900000/893400/893342/6e14c49a.jpg?impolicy=resizecrop&rw=1200&ra=fit",
+                "description": "Em Bali Garden Beach Resort - CHSE Certified, você encontra as seguintes comodidades: 18 buracos de golfe, serviço de traslado de/para o aeroporto e bar molhado. Com praia de areia branca, refeições de frente para a praia e bar na praia, este hotel é o lugar perfeito para aproveitar o sol. Visite Tari Spa, o spa no local, que oferece manicure e pedicure, aromaterapia e tratamentos faciais. Não se esqueça de saborear uma refeição em qualquer um dos 8 restaurantes no local, que contam com culinária mediterrânea e brunch. Além de comodidades como bar ao lado da piscina e loja de conveniência, os hóspedes podem se conectar ao Wi-Fi grátis nas áreas comuns.<br/>Todos os quartos em Bali Garden Beach Resort - CHSE Certified incluem vantagens como roupas de cama premium e ar-condicionado, além destas comodidades: cofres e Wi-Fi."
+            },
+            "lowestPrice": {
+                "currency": "BRL",
+                "amount": 357.00
+            },
+            "rooms": [
+                {
+                    "roomType": {
+                        "name": "Quarto superior"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 357.00
+                    },
+                    "cancellationPolicies": {
+                        "refundable": true
+                    }
+                },
+                {
+                    "roomType": {
+                        "name": "Quarto luxo, Vista para o jardim"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 394.00
+                    },
+                    "cancellationPolicies": {
+                        "refundable": true
+                    }
+                },
+                {
+                    "roomType": {
+                        "name": "Quarto Família"
+                    },
+                    "price": {
+                        "currency": "BRL",
+                        "amount": 456.98
+                    },
+                    "cancellationPolicies": {
+                        "refundable": false
+                    }
+                }
+            ]
+        }
+    ]
+}
