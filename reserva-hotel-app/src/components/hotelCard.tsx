@@ -29,7 +29,7 @@ export function HotelCard({ hotel }: HotelCardProps) {
   }).toString();
 
   return (
-    <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden w-[397px] sm:w-[357px]">
+    <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden w-full sm:w-[357px] lg:w-[397px]"   >
       <div className="relative">
         <img src={image} alt={name} className="w-full h-48 object-cover" />
 

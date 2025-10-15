@@ -40,7 +40,7 @@ export default function HotelDetailPage() {
       <SearchBar />
 
       {/* CONTEÚDO PRINCIPAL */}
-      <main className="w-full max-w-[1600px] mx-auto mt-10 px-6 mb-10">
+      <main className="w-full max-w-[1700px] mx-auto mt-10  mb-10">
         
         <div className="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-10">
          

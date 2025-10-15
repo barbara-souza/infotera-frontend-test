@@ -68,7 +68,7 @@ export default function CheckoutPage() {
       <Header />
 
       {/* CONTEÚDO PRINCIPAL */}
-      <main className="max-w-[1600px] mx-auto flex flex-col md:flex-row justify-between gap-8 px-6  mb-20">
+      <main className="max-w-[1700px] mx-auto flex flex-col md:flex-row justify-between gap-8 px-6  mb-20">
         {/* FORMULÁRIO DE RESERVA */}
         <form onSubmit={handleSubmit(onSubmit)} className="flex-1 space-y-6">
           <h1 className="text-base font-semibold text-[#00264D] mb-2">

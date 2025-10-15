@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, MouseEvent, TouchEvent } from "react";
 import { FiChevronDown, FiTrash2 } from "react-icons/fi";
 
-// Tipagem dos dados
+
 type StarsCount = Record<number, number>;
 interface HotelData {
   id: number;
@@ -31,7 +31,7 @@ interface FiltersPanelProps {
   unclassifiedCount: number;
 
   onClear: () => void;
-  onClose: () => void; // fecha o dropdown
+  onClose: () => void; 
 }
 
 export function FiltersPanel({
@@ -48,7 +48,7 @@ export function FiltersPanel({
   onClear,
   onClose,
 }: FiltersPanelProps) {
-  // ====== sem mudar funcionalidade: cálculo do teto e estado atual ======
+  
   const [maxAvailable, setMaxAvailable] = useState(0);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export function FiltersPanel({
         ...hotels.map((h) => Number(h.lowestPrice.amount || 0))
       );
       setMaxAvailable(highest);
-      onPriceChange(0, highest); // mantém comportamento: começa em 0 → máximo
+      onPriceChange(0, highest); 
     }
   }, [hotels]);
 
@@ -87,7 +87,7 @@ export function FiltersPanel({
 
   const getClientX = (e: MouseEvent | TouchEvent) => {
     if ("touches" in e && e.touches.length) return e.touches[0].clientX;
-    // @ts-ignore
+    
     return e.clientX as number;
   };
 
@@ -136,16 +136,16 @@ export function FiltersPanel({
     activeThumb && updateFromClientX(getClientX(e), activeThumb);
   const onTrackTouchEnd = () => setActiveThumb(null);
 
-  // ====== fechar ao clicar fora (somente layout/UX) ======
+  
   const panelRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const handleClickOutside = (ev: MouseEvent | TouchEvent) => {
       const target = ev.target as Node;
 
-      // botão do filtro tem este ID no SearchPage
+      
       const filterButton = document.getElementById("filter-button-wrapper");
 
-      // se clicou dentro do painel OU no botão, não fecha
+      
       if (
         panelRef.current?.contains(target) ||
         filterButton?.contains(target)
@@ -153,7 +153,7 @@ export function FiltersPanel({
         return;
       }
 
-      // fecha o dropdown
+      
       onClose();
     };
 
@@ -210,7 +210,7 @@ export function FiltersPanel({
               <span>{fmt(high)}</span>
             </div>
 
-            {/* SLIDER (layout ajustado) */}
+            
             <div
               ref={trackRef}
               className="relative h-4 mt-2 select-none"
@@ -222,9 +222,9 @@ export function FiltersPanel({
               onTouchMove={onTrackTouchMove}
               onTouchEnd={onTrackTouchEnd}
             >
-              {/* trilha cinza → mais fina (4px) */}
+              
               <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[4px] bg-gray-200 rounded-full" />
-              {/* faixa azul → mais fina (4px) */}
+              
               <div
                 className="absolute top-1/2 -translate-y-1/2 h-[4px] bg-[#0080FF] rounded-full"
                 style={{
@@ -233,7 +233,7 @@ export function FiltersPanel({
                 }}
               />
 
-              {/* thumb MIN → borda azul */}
+              
               <div
                 className={`absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-[18px] h-[18px] rounded-full bg-[#0080FF] border-2 border-[#0080FF] shadow-md cursor-pointer ${
                   activeThumb === "min" ? "ring-2 ring-blue-200" : ""
@@ -249,7 +249,7 @@ export function FiltersPanel({
                 }}
               />
 
-              {/* thumb MAX → borda azul */}
+             
               <div
                 className={`absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-[18px] h-[18px] rounded-full bg-[#0080FF] border-2 border-[#0080FF] shadow-md cursor-pointer ${
                   activeThumb === "max" ? "ring-2 ring-blue-200" : ""
@@ -268,7 +268,7 @@ export function FiltersPanel({
           </div>
         </div>
 
-        {/* estrelas */}
+        
         <div>
           <div className="flex items-center justify-between text-sm font-semibold text-gray-700">
             <span>Estrelas</span>
@@ -295,7 +295,7 @@ export function FiltersPanel({
                         MozAppearance: "none",
                       }}
                     />
-                    {/* check branco sobre fundo azul */}
+                    
                     <svg
                       className="absolute inset-0 w-3 h-3 m-auto text-white opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity"
                       fill="none"

@@ -25,56 +25,65 @@ export default function SearchBar() {
       : `${adults} Adult${adults > 1 ? "os" : "o"}, 1 Quarto`;
 
   return (
-    <section className="bg-white rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 px-0 py-0 w-full max-w-[1600px] h-[66px] mx-auto mt-8">
-      <div className="flex items-center gap-2 flex-1 px-6 py-2 relative text-left">
-        <div className="flex-1">
-          <div className="flex items-center gap-1 text-gray-500 mb-1">
-            <FiMapPin className="text-[#0080FF] text-sm" />
-            <label className="text-xs">Destino</label>
+    <section className="w-full flex justify-center px-4 mt-6">
+      <div className="bg-white rounded-2xl shadow-md flex flex-col lg:flex-row items-stretch lg:items-center justify-between w-full max-w-[1700px] gap-4 lg:gap-0 px-6 py-6">
+        {/* DESTINO */}
+        <div className="flex items-center gap-2 flex-1 px-2 relative text-left">
+          <div className="flex-1">
+            <div className="flex items-center gap-1 text-gray-500 mb-1">
+              <FiMapPin className="text-[#0080FF] text-sm" />
+              <label className="text-xs">Destino</label>
+            </div>
+            <p className="font-semibold text-[#002b5c]">
+              {destination || "Digite o destino"}
+            </p>
           </div>
-          <p className="font-semibold text-[#002b5c]">{destination}</p>
         </div>
-      </div>
 
-      <div className="hidden md:block w-px h-10 bg-gray-200" />
+        <div className="hidden md:block w-px h-10 bg-gray-200" />
 
-      <div className="flex items-center gap-2 flex-1 px-6 py-2 relative">
-        <div className="flex flex-col flex-1 text-left">
-          <div className="flex items-center gap-1 text-gray-500 mb-1">
-            <FiCalendar className="text-[#0080FF] text-sm" />
-            <label className="text-xs">Entrada</label>
+        {/* ENTRADA */}
+        <div className="flex items-center gap-2 flex-1 px-2 relative">
+          <div className="flex flex-col flex-1 text-left">
+            <div className="flex items-center gap-1 text-gray-500 mb-1">
+              <FiCalendar className="text-[#0080FF] text-sm" />
+              <label className="text-xs">Entrada</label>
+            </div>
+            <p className="font-semibold text-[#002b5c]">{startLabel}</p>
           </div>
-          <p className="font-semibold text-[#002b5c]">{startLabel}</p>
         </div>
-      </div>
 
-      <div className="hidden md:block w-px h-10 bg-gray-200" />
+        <div className="hidden md:block w-px h-10 bg-gray-200" />
 
-      <div className="flex items-center gap-2 flex-1 px-6 py-2">
-        <div className="flex flex-col flex-1 text-left">
-          <div className="flex items-center gap-1 text-gray-500 mb-1">
-            <FiCalendar className="text-[#0080FF] text-sm" />
-            <label className="text-xs">Saída</label>
+        {/* SAÍDA */}
+        <div className="flex items-center gap-2 flex-1 px-2">
+          <div className="flex flex-col flex-1 text-left">
+            <div className="flex items-center gap-1 text-gray-500 mb-1">
+              <FiCalendar className="text-[#0080FF] text-sm" />
+              <label className="text-xs">Saída</label>
+            </div>
+            <p className="font-semibold text-[#002b5c]">{endLabel}</p>
           </div>
-          <p className="font-semibold text-[#002b5c]">{endLabel}</p>
         </div>
-      </div>
 
-      <div className="hidden md:block w-px h-10 bg-gray-200" />
+        <div className="hidden md:block w-px h-10 bg-gray-200" />
 
-      <div className="flex items-center gap-2 flex-1 px-6 py-2 relative">
-        <div className="flex flex-col flex-1 text-left">
-          <div className="flex items-center gap-1 text-gray-500 mb-1">
-            <FiUsers className="text-[#0080FF] text-sm" />
-            <label className="text-xs">Hóspedes</label>
+        {/* HÓSPEDES */}
+        <div className="flex items-center gap-2 flex-1 px-2 relative">
+          <div className="flex flex-col flex-1 text-left">
+            <div className="flex items-center gap-1 text-gray-500 mb-1">
+              <FiUsers className="text-[#0080FF] text-sm" />
+              <label className="text-xs">Hóspedes</label>
+            </div>
+            <p className="font-semibold text-[#002b5c]">{guestsLabel}</p>
           </div>
-          <p className="font-semibold text-[#002b5c]">{guestsLabel}</p>
         </div>
-      </div>
 
-      <button className="bg-[#0080FF] text-white font-medium rounded-[50px] px-6 py-3 mx-4 shadow-md hover:bg-blue-600 transition">
-        Pesquisar
-      </button>
+        {/* BOTÃO */}
+        <button className="bg-[#0080FF] text-white font-medium rounded-[50px] px-6 py-3 shadow-md hover:bg-blue-600 transition w-full lg:w-auto">
+          Pesquisar
+        </button>
+      </div>
     </section>
   );
 }
