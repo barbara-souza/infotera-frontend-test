@@ -64,18 +64,13 @@ export default function CheckoutPage() {
 
   return (
     <div className="bg-[#E3EBF3] min-h-screen flex flex-col justify-between">
-      {/* HEADER */}
       <Header />
-
-      {/* CONTEÚDO PRINCIPAL */}
-      <main className="max-w-[1700px] mx-auto flex flex-col md:flex-row justify-between gap-8 px-6  mb-20">
-        {/* FORMULÁRIO DE RESERVA */}
+      <main className="max-w-[1700px] mx-auto flex flex-col md:flex-row justify-between gap-8 px-6 mt-8 md:mt-0 mb-20">
         <form onSubmit={handleSubmit(onSubmit)} className="flex-1 space-y-6">
           <h1 className="text-base font-semibold text-[#00264D] mb-2">
             Finalize sua reserva!
           </h1>
 
-          {/* DADOS DO HÓSPEDE */}
           <div className="bg-white p-5 rounded-xl shadow-md border border-gray-100">
             <h2 className="text-sm font-semibold text-[#00264D] mb-3">
               Hotel: {selectedHotel.hotel.name}
@@ -113,7 +108,6 @@ export default function CheckoutPage() {
             </div>
           </div>
 
-          {/* CONTATO DA RESERVA */}
           <div className="bg-white p-5 rounded-xl shadow-md border border-gray-100">
             <h2 className="text-sm font-semibold text-[#00264D] mb-3">
               Contato da reserva
@@ -180,7 +174,6 @@ export default function CheckoutPage() {
           </div>
         </form>
 
-        {/* RESUMO DA RESERVA */}
         <div className="bg-white p-5 rounded-xl shadow-md border border-gray-100 md:w-[380px] h-fit mt-[48px]">
           <h2 className="text-sm font-semibold text-[#0080FF] mb-3">
             Sua reserva
@@ -221,17 +214,24 @@ export default function CheckoutPage() {
             </p>
           </div>
 
-          {/* Total formatado igual à imagem */}
           <div className="border-t mt-4 pt-3 text-sm space-y-2">
             <div className="flex items-center justify-between text-[#00264D] font-medium">
               <p>Impostos e taxas</p>
-              <p>R$ {Number(taxes).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}</p>
+              <p>
+                R${" "}
+                {Number(taxes).toLocaleString("pt-BR", {
+                  minimumFractionDigits: 2,
+                })}
+              </p>
             </div>
 
             <div className="flex items-center justify-between">
               <p className="text-[#00264D] font-medium">Total</p>
               <p className="text-[#0080FF] font-bold text-lg">
-                R$ {Number(total).toLocaleString("pt-BR", { minimumFractionDigits: 2 })}
+                R${" "}
+                {Number(total).toLocaleString("pt-BR", {
+                  minimumFractionDigits: 2,
+                })}
               </p>
             </div>
           </div>
@@ -245,8 +245,6 @@ export default function CheckoutPage() {
           </button>
         </div>
       </main>
-
-      {/* FOOTER */}
       <Footer />
     </div>
   );

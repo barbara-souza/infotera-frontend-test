@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={poppins.variable}>
-      <body className="font-sans bg-[#e9f1f9] text-[#002b5c] antialiased overflow-x-hidden">
+      <body className="font-sans bg-[#e9f1f9] text-[#002b5c] antialiased overflow-x-hidden overflow-y-scroll">
         <ReactQueryProvider>
           <main className="w-full">
             <div className="max-w-[100%]">

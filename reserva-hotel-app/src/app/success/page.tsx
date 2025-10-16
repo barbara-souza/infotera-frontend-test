@@ -1,9 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-
-console.log('Página Success carregada!')
 
 type Reservation = {
   hotel: string
@@ -13,23 +11,25 @@ type Reservation = {
 }
 
 export default function SuccessPage() {
-  const [reservation, setReservation] = useState<Reservation | null>(null)
   const router = useRouter()
+  const [reservation, setReservation] = useState<Reservation | null>(() => {
+    if (typeof window !== 'undefined') {
+      const stored = sessionStorage.getItem('reservation')
+      return stored ? JSON.parse(stored) : null
+    }
+    return null
+  })
 
   useEffect(() => {
-    const stored = sessionStorage.getItem('reservation')
-    console.log('Session encontrada:', stored)
-    if (stored) {
-      setReservation(JSON.parse(stored))
-    } else {
-      router.push('/')
+    if (!reservation) {
+      router.replace('/')
     }
-  }, [router])
+  }, [reservation, router])
 
   if (!reservation) return null
 
   return (
-    <div className="bg-[#123952F2] min-h-screen text-white flex flex-col justify-center items-center">
+    <div className="bg-[#123952F2] min-h-screen text-white flex flex-col justify-center items-center overflow-x-hidden">
       <div className="max-w-md text-center space-y-6">
         <h1 className="text-2xl font-semibold">Reserva realizada com sucesso!</h1>
 

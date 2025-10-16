@@ -4,6 +4,13 @@ import { FiMapPin, FiCalendar, FiUsers } from "react-icons/fi";
 import { useSearchParams } from "next/navigation";
 import { format } from "date-fns";
 
+
+const parseLocalDate = (dateStr: string) => {
+  if (!dateStr) return null;
+  const [year, month, day] = dateStr.split("-").map(Number);
+  return new Date(year, month - 1, day); 
+};
+
 export default function SearchBar() {
   const searchParams = useSearchParams();
 
@@ -13,10 +20,14 @@ export default function SearchBar() {
   const adults = Number(searchParams.get("adults") ?? 2);
   const children = Number(searchParams.get("children") ?? 0);
 
+ 
   const startLabel = start
-    ? format(new Date(start), "dd/MM/yyyy")
+    ? format(parseLocalDate(start)!, "dd/MM/yyyy")
     : "Selecionar";
-  const endLabel = end ? format(new Date(end), "dd/MM/yyyy") : "Selecionar";
+  const endLabel = end
+    ? format(parseLocalDate(end)!, "dd/MM/yyyy")
+    : "Selecionar";
+
   const guestsLabel =
     children > 0
       ? `${adults} Adult${adults > 1 ? "os" : "o"}, ${children} Crianç${
@@ -26,7 +37,7 @@ export default function SearchBar() {
 
   return (
     <section className="w-full flex justify-center px-4 mt-6">
-      <div className="bg-white rounded-2xl shadow-md flex flex-col lg:flex-row items-stretch lg:items-center justify-between w-full max-w-[1700px] gap-4 lg:gap-0 px-6 py-6">
+      <div className="bg-white rounded-2xl shadow-md flex flex-col lg:flex-row items-stretch lg:items-center justify-between w-full max-w-[1700px] gap-4 lg:gap-0 px-6 py-3">
         {/* DESTINO */}
         <div className="flex items-center gap-2 flex-1 px-2 relative text-left">
           <div className="flex-1">
@@ -42,8 +53,9 @@ export default function SearchBar() {
 
         <div className="hidden md:block w-px h-10 bg-gray-200" />
 
-        {/* ENTRADA */}
-        <div className="flex items-center gap-2 flex-1 px-2 relative">
+        
+        <div className="flex flex-col md:flex-row flex-1 gap-4 px-2 relative">
+          {/* ENTRADA */}
           <div className="flex flex-col flex-1 text-left">
             <div className="flex items-center gap-1 text-gray-500 mb-1">
               <FiCalendar className="text-[#0080FF] text-sm" />
@@ -51,12 +63,8 @@ export default function SearchBar() {
             </div>
             <p className="font-semibold text-[#002b5c]">{startLabel}</p>
           </div>
-        </div>
 
-        <div className="hidden md:block w-px h-10 bg-gray-200" />
-
-        {/* SAÍDA */}
-        <div className="flex items-center gap-2 flex-1 px-2">
+          {/* SAÍDA */}
           <div className="flex flex-col flex-1 text-left">
             <div className="flex items-center gap-1 text-gray-500 mb-1">
               <FiCalendar className="text-[#0080FF] text-sm" />

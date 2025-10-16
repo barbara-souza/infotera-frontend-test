@@ -40,7 +40,7 @@ export default function HotelDetailPage() {
       <SearchBar />
 
       {/* CONTEÚDO PRINCIPAL */}
-      <main className="w-full max-w-[1700px] mx-auto mt-10  mb-10">
+      <main className="w-full max-w-[1700px] mx-auto mt-10 mb-10 px-4 md:px-0">
         
         <div className="bg-white rounded-2xl shadow-md p-6 flex flex-col gap-10">
          
@@ -102,7 +102,7 @@ export default function HotelDetailPage() {
                   className="w-full bg-[#E3EBF3] border border-gray-200 rounded-xl flex flex-col md:flex-row justify-between items-center p-4 hover:shadow-md transition"
                 >
                   
-                  <div className="flex flex-col items-start w-full md:w-[70%]">
+                  <div className="flex flex-col items-center md:items-start w-full md:w-[70%]">
                     <p className="text-[#00264D] font-semibold text-lg">
                       {room.roomType.name}
                     </p>
