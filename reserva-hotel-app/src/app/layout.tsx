@@ -11,7 +11,7 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: 'Reserva Hotel App',
+  title: 'Infotravel',
   description: 'Simulador de reserva de hotéis',
 }
 
