@@ -26,13 +26,12 @@ export default function HomePage() {
   const [destination, setDestination] = useState("");
   const [debouncedDestination, setDebouncedDestination] = useState("");
   const [selectedSuggestion, setSelectedSuggestion] = useState("");
-  const [errorMessage, setErrorMessage] = useState(""); 
+  const [errorMessage, setErrorMessage] = useState("");
 
   const calendarRef = useRef<HTMLDivElement>(null);
   const guestsRef = useRef<HTMLDivElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
 
- 
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedDestination(destination);
@@ -54,7 +53,6 @@ export default function HomePage() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-
   const { data: suggestions } = useQuery({
     queryKey: ["suggestions", debouncedDestination],
     queryFn: async () => {
@@ -72,11 +70,9 @@ export default function HomePage() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-
     const query = selectedSuggestion || destination;
     const start = dateRange[0].startDate;
     const end = dateRange[0].endDate;
-
     if (!query.trim()) {
       setErrorMessage("Por favor, selecione um destino.");
       return;
@@ -85,12 +81,9 @@ export default function HomePage() {
       setErrorMessage("Por favor, selecione as datas de entrada e saída.");
       return;
     }
-
     setErrorMessage("");
-
     const startISO = format(start, "yyyy-MM-dd");
     const endISO = format(end, "yyyy-MM-dd");
-
     const params = new URLSearchParams({
       destination: query,
       start: startISO,
@@ -98,13 +91,11 @@ export default function HomePage() {
       adults: String(adults),
       children: String(children),
     });
-
     router.push(`/search?${params.toString()}`);
   };
 
   return (
     <div className="min-h-screen flex flex-col justify-between bg-[#E3EBF3]">
-      
       <header className="py-4 w-full flex justify-center">
         <div className="flex justify-between items-center w-full max-w-[1700px] px-5">
           <div className="flex items-center gap-2">
@@ -123,23 +114,20 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* MAIN */}
       <main className="flex flex-col items-center justify-center flex-1 px-4 text-center">
-        <h2 className=" font-sans font-semibold text-[50px] leading-[59px] text-[#0B0B0B] text-center mb-[40px] ">
+        <h2 className="font-sans font-semibold text-[32px] sm:text-[40px] lg:text-[50px] leading-tight text-[#0B0B0B] text-center mb-8 sm:mb-10">
           Os melhores <span className="text-[#0080FF]">Hoteis</span> e{" "}
           <span className="text-[#0080FF]">Destinos</span> <br />
           para sua viagem
         </h2>
 
-        {/* FORM */}
         <form
           onSubmit={handleSearch}
-          className="bg-white rounded-2xl shadow-md flex flex-col md:flex-row items-center justify-between gap-4 md:gap-0 px-0 py-0 w-full max-w-[1700px] h-[66px] mx-auto"
+          className="bg-white rounded-2xl shadow-md flex flex-col lg:flex-row items-center justify-between gap-4 px-4 sm:px-6 lg:px-0 py-4 w-full max-w-[1700px] mx-auto lg:h-[66px]"
         >
-          {/* DESTINO */}
           <div
             ref={suggestionsRef}
-            className="flex items-center gap-2 flex-1 px-6 py-2 relative text-left"
+            className="flex items-center gap-2 flex-1 px-3 sm:px-6 py-2 relative text-left w-full"
           >
             <div className="flex-1">
               <div className="flex items-center gap-1 text-gray-500 mb-1">
@@ -155,17 +143,12 @@ export default function HomePage() {
                   setErrorMessage("");
                 }}
                 placeholder="Digite o destino"
-                className="font-semibold text-[#002b5c] outline-none w-full"
+                className="font-semibold text-[#002b5c] outline-none w-full text-sm sm:text-base"
               />
             </div>
             {suggestions && debouncedDestination.length > 1 && (
-              <div className="absolute left-0 top-full mt-3 w-[360px] bg-white rounded-2xl shadow-lg z-50 border border-gray-100">
-                
-                <div
-                  className="absolute -top-2 left-8 w-4 h-4 bg-white rotate-45 border-l border-t border-gray-100"
-                  aria-hidden
-                />
-
+              <div className="absolute left-0 top-full mt-3 w-full sm:w-[360px] bg-white rounded-2xl shadow-lg z-50 border border-gray-100">
+                <div className="absolute -top-2 left-8 w-4 h-4 bg-white rotate-45 border-l border-t border-gray-100" />
                 <div className="py-2 max-h-[320px] overflow-y-auto">
                   {suggestions.length > 0 ? (
                     suggestions.map((item: any, idx: number) => {
@@ -173,7 +156,6 @@ export default function HomePage() {
                       const region = item.region as string;
                       const q = debouncedDestination.trim().toLowerCase();
                       const i = name.toLowerCase().indexOf(q);
-
                       const renderHighlighted = () => {
                         if (i === -1 || !q) return name;
                         const before = name.slice(0, i);
@@ -189,7 +171,6 @@ export default function HomePage() {
                           </>
                         );
                       };
-
                       return (
                         <button
                           key={idx}
@@ -202,7 +183,6 @@ export default function HomePage() {
                           }}
                           className="w-full flex items-start gap-3 px-4 py-3 text-left hover:bg-[#E9F1F9] transition"
                         >
-                          
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="mt-0.5 h-5 w-5 text-[#0080FF] shrink-0"
@@ -222,7 +202,6 @@ export default function HomePage() {
                               d="M19.5 9.5c0 5.25-7.5 11-7.5 11S4.5 14.75 4.5 9.5a7.5 7.5 0 1115 0z"
                             />
                           </svg>
-
                           <div className="flex flex-col">
                             <p className="text-[15px] font-semibold text-[#00264D] leading-5">
                               {renderHighlighted()}
@@ -244,9 +223,8 @@ export default function HomePage() {
 
           <div className="hidden md:block w-px h-10 bg-gray-200" />
 
-          
           <div
-            className="flex items-center gap-2 flex-1 px-6 py-2 relative"
+            className="flex items-center gap-2 flex-1 px-3 sm:px-6 py-2 relative w-full"
             ref={calendarRef}
           >
             <div
@@ -257,14 +235,12 @@ export default function HomePage() {
                 <FiCalendar className="text-[#0080FF] text-sm" />
                 <label className="text-xs">Entrada</label>
               </div>
-
-              <p className="font-semibold text-[#002b5c]">
+              <p className="font-semibold text-[#002b5c] text-sm sm:text-base">
                 {dateRange[0].startDate
                   ? format(dateRange[0].startDate, "dd/MM/yyyy")
                   : "Selecionar"}
               </p>
             </div>
-
             {showCalendar && (
               <div className="absolute top-16 bg-white shadow-lg rounded-md z-20">
                 <DateRange
@@ -294,15 +270,13 @@ export default function HomePage() {
 
           <div className="hidden md:block w-px h-10 bg-gray-200" />
 
-          
-          <div className="flex items-center gap-2 flex-1 px-6 py-2">
+          <div className="flex items-center gap-2 flex-1 px-3 sm:px-6 py-2 w-full">
             <div className="flex flex-col flex-1 text-left">
               <div className="flex items-center gap-1 text-gray-500 mb-1">
                 <FiCalendar className="text-[#0080FF] text-sm" />
                 <label className="text-xs">Saída</label>
               </div>
-
-              <p className="font-semibold text-[#002b5c]">
+              <p className="font-semibold text-[#002b5c] text-sm sm:text-base">
                 {dateRange[0].endDate
                   ? format(dateRange[0].endDate, "dd/MM/yyyy")
                   : "Selecionar"}
@@ -312,10 +286,9 @@ export default function HomePage() {
 
           <div className="hidden md:block w-px h-10 bg-gray-200" />
 
-          {/* HÓSPEDES */}
           <div
             ref={guestsRef}
-            className="flex items-center gap-2 flex-1 px-6 py-2 relative"
+            className="flex items-center gap-2 flex-1 px-3 sm:px-6 py-2 relative w-full"
           >
             <div
               onClick={() => setShowGuests(!showGuests)}
@@ -325,8 +298,7 @@ export default function HomePage() {
                 <FiUsers className="text-[#0080FF] text-sm" />
                 <label className="text-xs">Hóspedes</label>
               </div>
-
-              <p className="font-semibold text-[#002b5c]">
+              <p className="font-semibold text-[#002b5c] text-sm sm:text-base">
                 {children > 0
                   ? `${adults} Adult${
                       adults > 1 ? "os" : "o"
@@ -334,15 +306,9 @@ export default function HomePage() {
                   : `${adults} Adult${adults > 1 ? "os" : "o"}, 1 Quarto`}
               </p>
             </div>
-
             {showGuests && (
               <div className="absolute left-0 top-full mt-3 w-72 bg-white rounded-2xl shadow-lg p-6 z-20 border border-gray-100">
-                <div
-                  className="absolute -top-2 left-8 w-4 h-4 bg-white rotate-45 border-l border-t border-gray-100"
-                  aria-hidden
-                />
-
-                
+                <div className="absolute -top-2 left-8 w-4 h-4 bg-white rotate-45 border-l border-t border-gray-100" />
                 <div className="flex flex-col justify-between  items-center mb-5">
                   <p className="font-semibold text-[#00264D] text-left w-full mb-3 ">
                     Adultos
@@ -367,10 +333,7 @@ export default function HomePage() {
                     </button>
                   </div>
                 </div>
-
                 <div className="h-px bg-gray-200 my-3" />
-
-                
                 <div className="flex flex-col justify-between items-center mb-5">
                   <p className="font-semibold text-[#00264D] text-left w-full mb-3 ">
                     Crianças
@@ -395,10 +358,7 @@ export default function HomePage() {
                     </button>
                   </div>
                 </div>
-
                 <div className="h-px bg-gray-200 my-3" />
-
-                
                 <div className="flex justify-end">
                   <button
                     type="button"
@@ -412,16 +372,14 @@ export default function HomePage() {
             )}
           </div>
 
-          {/* BOTÃO */}
           <button
             type="submit"
-            className="bg-[#0080FF] text-white font-medium rounded-[50px] px-6 py-3 mx-4 shadow-md hover:bg-blue-600 transition"
+            className="bg-[#0080FF] text-white font-medium rounded-[50px] px-6 py-3 w-full sm:w-auto mx-0 lg:mx-4 shadow-md hover:bg-blue-600 transition self-stretch lg:self-auto"
           >
             Pesquisar
           </button>
         </form>
 
-        {/*  MENSAGEM DE ERRO */}
         {errorMessage && (
           <div className="mt-4 bg-red-100 border border-red-300 text-red-700 px-4 py-2 rounded-lg max-w-md mx-auto">
             {errorMessage}
@@ -429,8 +387,7 @@ export default function HomePage() {
         )}
       </main>
 
-      
-      <footer className="bg-white text-center text-sm text-gray-500 py-4">
+      <footer className="bg-white text-center text-sm text-gray-500 py-4 mt-6 sm:mt-10">
         © 2025 | Todos os direitos reservados
       </footer>
     </div>

@@ -100,7 +100,7 @@ export default function SearchPage() {
 
       <SearchBar />
 
-      <section className="flex justify-between items-center w-full max-w-[1600px] mx-auto mt-10 px-6 relative">
+      <section className="flex justify-between items-center w-full max-w-[1700px] mx-auto mt-10 px-6 relative">
         <div>
           <h1 className="text-2xl font-semibold text-[#00264D]">
             {destination}
@@ -156,7 +156,7 @@ export default function SearchPage() {
         </div>
       </section>
 
-      <section className="grid gap-10 p-6 md:grid-cols-2 lg:grid-cols-4 max-w-[1600px] mx-auto">
+      <section className="grid gap-5 p-6 md:grid-cols-2 lg:grid-cols-3 max-w-[1700px] mx-auto">
         {filteredHotels.length === 0 ? (
           <p className="text-center text-gray-500">Nenhum hotel encontrado.</p>
         ) : (
@@ -166,14 +166,13 @@ export default function SearchPage() {
             animate="visible"
             variants={{
               hidden: {},
-              visible: {
-                transition: { staggerChildren: 0.1 },
-              },
+              visible: { transition: { staggerChildren: 0.1 } },
             }}
           >
             {filteredHotels.map((hotel) => (
               <motion.div
                 key={hotel.id}
+                className="p-4"
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0 },
@@ -186,7 +185,6 @@ export default function SearchPage() {
           </motion.div>
         )}
       </section>
-
       <Footer />
     </div>
   );
