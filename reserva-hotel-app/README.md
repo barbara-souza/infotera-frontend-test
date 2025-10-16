@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Infotravel - Plataforma de Busca e Reserva de Hotéis
 
-## Getting Started
+Este projeto é uma aplicação frontend desenvolvida em **Next.js** com **React** e **TypeScript**, que simula uma plataforma completa de busca, visualização e reserva de hotéis.  
+A aplicação foi construída com foco em **responsividade**, **usabilidade** e **boas práticas de arquitetura frontend**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tecnologias Principais
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Next.js 14 (App Router)
+- React 18
+- TypeScript
+- Tailwind CSS
+- React Query (TanStack Query)
+- Zustand (estado global)
+- React Hook Form + Zod (validação de formulários)
+- Framer Motion (animações)
+- Date-fns (manipulação de datas)
+- JSON Server (simulação de API local)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Funcionalidades
 
-## Learn More
+### Página Inicial (`/`)
+- Campos de busca: **Destino**, **Entrada**, **Saída** e **Hóspedes**.
+- Busca com **sugestões automáticas de destinos**.
+- Redirecionamento para a página de resultados ao clicar em **Pesquisar**.
+- Layout **responsivo** (mobile-first).
 
-To learn more about Next.js, take a look at the following resources:
+### Página de Busca (`/search`)
+- Consome o endpoint interno `/api/hotels`.
+- Exibe resultados em formato de **cards de hotéis** com imagens, preço e classificação.
+- Implementa estados de carregamento e erro:
+  - **Carregando:** exibe skeletons.
+  - **Erro:** mensagem genérica de falha de requisição.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Filtros disponíveis:
+  - Nome
+  - Faixa de preço
+  - Estrelas
+- Cada card leva à página de detalhes do hotel.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Página de Detalhes (`/hotel/[id]`)
+- Exibe informações completas do hotel selecionado.
+- Mostra comodidades, políticas e tipos de quarto disponíveis.
+- Permite seguir para o checkout com o quarto escolhido.
 
-## Deploy on Vercel
+### Página de Checkout (`/checkout`)
+- Formulário de dados do hóspede e contato com validação (React Hook Form + Zod).
+- Exibe resumo da reserva com cálculo de taxas e valor total.
+- Redireciona para a página de sucesso após a conclusão.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Página de Sucesso (`/success`)
+- Exibe confirmação da reserva.
+- Mostra dados armazenados no `sessionStorage`.
+- Corrige comportamentos de redirecionamento indesejados (sem flash da home).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Instalar as dependências 
+
+- npm install
+
+## Executar o servidor da API 
+
+- npm run server
+
+## Executar o projeto 
+
+- npm run dev
+- Acessar http://localhost:3000
+
+## Como Gerar o Build de Produção 
+
+- npm run build
+
+## Autor
+
+Bárbara Souza
+Repositório: https://github.com/barbara-souza/infotravel-frontend-test
